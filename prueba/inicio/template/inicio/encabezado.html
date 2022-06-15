@@ -1,0 +1,15 @@
+<html lang="es">
+<head>
+    <title>{% block titulo%}{%endblock%}</title>
+</head>
+<body>
+    <!---MENÚ-->
+    <a href="{%url 'Principal'%}">Home</a>
+    <a href="{%url 'Contacto'%}">Contactanos</a>
+
+    <!--CONTENIDO-->
+    {% block contenido %}
+    //Aqui se colocara el bloque
+    {% endblock%}
+</body>
+</html>
