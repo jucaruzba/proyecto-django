@@ -63,33 +63,17 @@
 			<div class="sidebar-content">
 				<!-- Menú de navegación -->
 				<ul class="navigation">
-							<li><a href="principal.html">Principal</a></li>
-							<li><a href="formulario.html">Registro</a></li>		
+                    <li><a href="{%url 'Principal'%}">Home</a></li>
+                    <li><a href="{%url 'Contacto'%}">Contactanos</a></li>
+                    <li><a href="{%url 'Formulario'%}">Formulario</a></li>
 				</ul>
 				<!-- /Fin menú -->
 			</div>
 		</div>
 		<!-- /sidebar -->
-
-
-		<!-- Contenido Principal-->
-	 	<div class="page-content">
-
-
-			<!--Encabezdo -->
-			<div class="page-header">
-				<div class="page-title">
-					<h3>Alumnos
-				    <small>Lista de Alumnos 9A</small></h3>
-				</div>
-
-				
-			</div>
-			<!-- /Encabezado-->
-
-
-		</div>
-		<!-- /Contenido Principal-->
+        {% block contenido %}
+        //Aqui se colocara el bloque de contenido
+        {% endblock%}
 	</div>
 </body>
 </html>

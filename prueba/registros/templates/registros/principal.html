@@ -37,18 +37,24 @@ PRINCIPAL
                     <th>Nombre</th>
                     <th>Carrera</th>
                     <th>Turno</th>
+                    <th></th>
+                    <th></th>
 
                 </tr>
             </thead>
 
             <tbody>
+                {%for alumno in alumnos%}
                 <tr>
-                    <td class="text-center"><img src="" alt="" class="img-media"> </td>
-                    <td class="text-semibold">UTM190048TI</td>
-                    <td class="muted">Natalia</td>
-                    <td class="muted">Tic</td>
-                    <td class="muted">Matutino</td>
+                    <td class="text-center"><img src="{{alumno.imagen.url}}" alt="" class="img-media"> </td>
+                    <td class="text-semibold">{{alumno.matricula}}</td>
+                    <td class="muted">{{alumno.nombre}}</td>
+                    <td class="muted">{{alumno.carrera}}</td>
+                    <td class="muted">{{alumno.turno}}</td>
+                    <td class="muted text-center"><a href="{% url 'Editaral' alumno.matricula%}">Edit</a> </td>
+                    <td class="muted text-center text-dark"><a href="{%url 'Eliminacion' alumno.matricula%}">Eliminar</a></td>
                 </tr>
+                {%endfor%}
             </tbody>
         </table>
     </div>

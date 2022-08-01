@@ -28,29 +28,29 @@ PRINCIPAL
 {% block contenido %}
 <!-- Contenido Principal-->
     <div>
-        <table class="table table-bordered table" description="">
+        <table class="table table-bordered table-dark" description="">
             <caption>
             <thead>
                 <tr>
-                    <th>Foto</th>
-                    <th>Matricula</th>
-                    <th>Nombre</th>
-                    <th>Carrera</th>
-                    <th>Turno</th>
+                    <th>Usuario</th>
+                    <th>Mensaje</th>
+                    <th></th>
+                    <th></th>
 
                 </tr>
             </thead>
 
             <tbody>
+                {%for comentario in comentarios%}
                 <tr>
-                    <td class="text-center"><img src="" alt="" class="img-media"> </td>
-                    <td class="text-semibold">UTM190048TI</td>
-                    <td class="muted">Natalia</td>
-                    <td class="muted">Tic</td>
-                    <td class="muted">Matutino</td>
+                    <td class="text-semibold">{{comentario.usuario}}</td>
+                    <td class="muted">{{comentario.mensaje}}</td>
+                    <td class="muted text-center"><button class="btn btn-primary btn-lg"><a href="{%url 'Consulta' comentario.id%}">Edit</button></td>
+                    <td class="muted text-center text-dark"><a href="{%url 'Eliminar' comentario.id%}">Eliminar</a></td>
                 </tr>
+                {%endfor%}
             </tbody>
-        </table>
+        </table> 
     </div>
 
     <!--Encabezdo -->
